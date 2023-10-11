@@ -1,0 +1,18 @@
+<div class="d-flex  flex-column justify-content-center align-items-center">
+<h3 class="m-4">ToDo Application</h3>
+<input type="text" [(ngModel)]="input" class="w-25 form-control" />
+<button class="m-4 btn btn-primary" (click)="addTodoComponent()">Add</button>
+<p *ngIf="todosComponents.length === 0">No Todo</p>
+<div *ngFor="let i of todosComponents" class="w-25">
+  <div
+    class="d-flex align-items-center justify-content-between p-2 border-bottom border-primary"
+  >
+    <p class="fs-5 m-0">{{ i.id }}</p>
+    <p class="fs-5 m-0">{{ i.todo }}</p>
+    <div class="d-flex justify-content-between w-50">
+      <button class="btn btn-primary" (click)="editTodoComponent(i.id)">Edit</button>
+      <button class="btn btn-danger" (click)="deleteTodoComponent(i.id)">Delete</button>
+    </div>
+  </div>
+</div>
+</div>
